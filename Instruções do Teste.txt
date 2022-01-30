@@ -1,0 +1,34 @@
+===================================  TESTE TÉCNICO - FAZGAME 2022 ==========================================
+
+
+
+O teste técnico será composto por três tarefas a serem executadas dentro do projeto neste repositório:
+
+
+1º - Criar um sistema de save automático e carregar automaticamente as ações criadas anteriormente no editor de ações.
+
+O sistema deverá transformar as estruturas do grafo em dados estruturados e guardar estes dados estruturados de maneira organizada,
+mantendo todas as relações entre eles. Ao iniciar a cena, o sistema deverá carregar as ações salvas, mantendo suas posições dentro 
+do contêiner de ações.
+
+2º - Tornar dinâmicamente elástico o contêiner de ações.
+
+A janela deve ser capaz de abrigar todas as ações criadas dentro dela, expandindo-se para a direita quando necessário.
+
+3º - Criar um sistema de seleção de personagens na janela de Diálogo
+
+Implementar dentro da janela de criação de diálogo uma interface de seleção de personagens, que deverá guardar os personagens 
+escolhidos de cada mensagem na estrutura do diálogo. Os assets de placeholder para os personagens estão na pasta de sprites.
+
+
+É importante frisar que:
+
+- Não é obrigatório o término de todas as tarefas. O teste será analisado pelo o que foi feito, mesmo que incompleto.
+
+- Registre o tempo utilizado dentro do teste. 
+
+- As tarefas não precisam ser feitas em ordem. Você resolvê-las na ordem que preferir.
+
+- Caso tenha qualquer dúvida, sinta-se à vontade para mandar um e-mail com a dúvida.
+
+============================================================================================================
