@@ -9,6 +9,7 @@ public class GraphManager : MonoBehaviour
     // prefabs
     public GraphPrefabs prefabs;
 
+    public RectTransform graphsContentArea;
     public DependencyPlacer dependencyPlacer;
     public ScrollRect scrollableArea;
     public RectTransform vertexArea;
@@ -21,7 +22,7 @@ public class GraphManager : MonoBehaviour
     private int vertexCount = 0;
     private float widthValue;
     private Vector3 rectFirstPosition;
-    
+    private float contentBufferwidth;
 
     [HideInInspector]
     public BasicVertex hoveredVertex;
@@ -35,12 +36,32 @@ public class GraphManager : MonoBehaviour
             selectedVertex = value;
         }
     }
-
     private void Start()
     {
+        contentBufferwidth = graphsContentArea.sizeDelta.y;
+
+        Debug.Log($"Content Buffer Width {contentBufferwidth}");
+
         UpdateGraphIcons();
         Setup();
     }
+
+    private void Update()
+    {
+        float highestDistance = 0;
+
+        for (int i = 0; i < vertexArea.childCount; i++)
+        {
+            var child = vertexArea.GetChild(i) as RectTransform;
+            highestDistance = child.localPosition.x > highestDistance ? child.localPosition.x : highestDistance;
+        }
+
+        Debug.Log($"Highest Distance {highestDistance}");
+
+        if(highestDistance >= 0)
+            graphsContentArea.sizeDelta = new Vector2(highestDistance + contentBufferwidth, graphsContentArea.sizeDelta.y);
+    }
+
 
     public void CleanUp(bool shouldSave)
     {
