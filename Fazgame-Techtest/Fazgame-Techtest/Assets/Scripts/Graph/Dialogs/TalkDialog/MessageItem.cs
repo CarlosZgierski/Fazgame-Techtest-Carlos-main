@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class MessageItem : MonoBehaviour
 {
     public InputField messageInput;
+    public AvatarItem avatarItem;
 
     protected NewTalkDialog parent;
 
@@ -31,10 +32,11 @@ public class MessageItem : MonoBehaviour
         set
         {
             messageInput.text = value.text;
+            avatarItem.ChooseNewAvatar(value.avatarId);
         }
         get
         {
-            return new Speech(Text);
+            return new Speech(Text, avatarItem.avatarId);
         }
     }
 

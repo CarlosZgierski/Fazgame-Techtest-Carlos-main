@@ -1,21 +1,17 @@
-﻿//using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-//public class AvatarItem : PanelItem
-//{
-//    public NewTalkDialog talkDialog;
+public class AvatarItem : MonoBehaviour
+{
+    [SerializeField] private Image avatarImage;
+    [SerializeField] private List<Sprite> possibleAvatarSprites;
 
-//    void Start()
-//    {
-//        talkDialog = FindObjectOfType(typeof(NewTalkDialog)) as NewTalkDialog;
-//    }
+    [HideInInspector] public int avatarId;
 
-//    public override void OnUsed()
-//    {
-//        talkDialog.SubmitSpriteID(spriteID);
-//    }
-
-//    public void tk2dOnTouched()
-//    {
-//        OnTouchStart();
-//    }
-//}
+    public void ChooseNewAvatar(int newAvatarId)
+    {
+        avatarId = newAvatarId;
+        avatarImage.sprite = possibleAvatarSprites[avatarId];
+    }
+}

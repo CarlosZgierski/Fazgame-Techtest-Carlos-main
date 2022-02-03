@@ -10,7 +10,7 @@ public class DialogueInteraction : Interaction {
     float speechTime;
 
     public string text = string.Empty;
-    
+	public int avatarId = 0;
 	
 	public float arriseTime = 0;
 	public iTween.EaseType arriseEase = iTween.EaseType.easeOutElastic;
@@ -97,6 +97,7 @@ public class DialogueInteraction : Interaction {
 		DialogueInteraction novaFala = lastDialogue.gameObject.AddComponent<DialogueInteraction>();
 		novaFala.AddDependencie(lastDialogue);
 		novaFala.text = f.text;
+		novaFala.avatarId = f.avatarId;
 	}
 	
 	public List<Interaction> SetFalas(Speech[] falas){
@@ -123,6 +124,7 @@ public class DialogueInteraction : Interaction {
 				}
 			}
 			i.text = f.text;
+			i.avatarId = f.avatarId;
 			prev = i;
 			i = next;
 		}
